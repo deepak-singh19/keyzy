@@ -2,21 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-}
+} */
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+} */
 
-body {
+/* body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -24,4 +24,62 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+} */
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
 }
+
+textarea:focus, input:focus{
+  outline: none;
+}
+
+.slider-tooltip {
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+  text-align: center;
+  top: -30px; /* Adjust as needed to position above the slider */
+  left: 50%; /* Centered above the slider */
+  transform: translateX(-50%); /* Center horizontally */
+}
+
+.slider-with-tooltip {
+  position: relative;
+  width: 100%;
+  
+}
+
+
+.slider {
+  width: 100%; /* You can adjust the width as needed */
+}
+
+
+.tooltip {
+  position: absolute;
+  bottom: 100%; /* Position the tooltip above the slider */
+  transform: translateX(-50%); /* Center the tooltip above the slider */
+   /* Tooltip background color */
+  color: black; /* Tooltip text color */
+  padding: 4px 8px; /* Tooltip padding */
+  border-radius: 4px;
+  margin-left: 8px;
+  margin-right: 8px; /* Add rounded corners to the tooltip */
+}
+
+.custom-wrap {
+  white-space: pre-wrap;
+}
+
+
+/* new */
+
+
+
