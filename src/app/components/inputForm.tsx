@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import axios from "axios";
@@ -48,10 +48,13 @@ const InputForm = ({
     setDiscount(newValue);
   };
 
-  const handleRentRateSliderChange = (value: number | number[]) => {
-    const newValue = Array.isArray(value) ? value[0] : value;
-    setConvertedRentRate(newValue);
-  };
+  const handleRentRateSliderChange = useCallback(()=>{
+    (value: number | number[]) => {
+      const newValue = Array.isArray(value) ? value[0] : value;
+      setConvertedRentRate(newValue);
+    };
+
+  },[])
 
   const handleDurationChange = (a: number) => {
     setDuration(a);
@@ -62,6 +65,7 @@ const InputForm = ({
     setDesiredYield(newValue);
 
     if (newValue >= 4.5 && newValue <= 9) {
+      // setDesiredYield(newValue);
       setErrorMessage("");
     } else {
       setErrorMessage("Please fill value between 4.5% to 9%");
@@ -84,7 +88,7 @@ const InputForm = ({
       <div className="flex flex-col w-[100%] h-[600px] items-start justify-between my-4 ">
         <div className="flex flex-row  flex-wrap h-auto items-center w-full">
           <label className="flex w-1/4">URL</label>
-          <div className="w-3/4 bg-blue-500 justify-center h-auto items-center text-center text-sm text-white  px-2 py-1 break-words">
+          <div className="w-3/4 bg-blue-500 justify-center h-auto lg:h-[40px] items-center text-center lg:text-center  text-sm text-white  px-2 py-1 break-words">
             {`https://www.rightmove.co.uk/properties/${url}`}
           </div>
     
