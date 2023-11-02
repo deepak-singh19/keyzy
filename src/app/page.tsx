@@ -19,7 +19,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="md:hidden w-full h-full flex lg:flex-row flex-col justify-around items-center">
+      <div className="md:hidden w-full h-full flex lg:flex lg:flex-row flex-col justify-around items-center">
         <div className="flex w-full lg:w-5/12">
           <InputForm
             discount={discount}
@@ -38,7 +38,7 @@ const Home = () => {
             errorMessage={errorMessage}
           />
         </div>
-        <div className="sm:hidden lg:w-[2px] lg:h-[600px] border-l-2 border-red-500 border-dotted my-12"></div>
+        <div className="sm:hidden lg:flex lg:w-[2px] lg:h-[600px] border-l-2 border-red-500 border-dotted my-12"></div>
         <div className="flex w-full lg:w-5/12">
           <OutputForm discount={discount}
             setDiscount={setDiscount}
@@ -57,7 +57,7 @@ const Home = () => {
       </div>
 
       {/* Tablet View */}
-      <div className="hidden md:flex md:w-full h-[100vh] justify-center items-center">
+      <div className="hidden  lg:hidden md:flex md:w-full h-[100vh] justify-center items-center">
       Not tablet friendly - please use mobile or desktop device.
       </div>
     </>
