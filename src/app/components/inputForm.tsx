@@ -136,8 +136,8 @@ const InputForm = ({
         </div>
         <div className="flex flex-row  items-center w-full">
           <label className="flex w-1/4">Converted Rent Rate:</label>
-          <div className="flex justify-between mx-2 w-3/4">
-            <div className="mx-2 w-1/12">10%</div>
+          <div className="flex justify-between items-center mx-2 w-3/4">
+            <div className="mx-2 w-1/12 p-2">10</div>
             <div className="flex flex-row w-full justify-center items-center slider-with-tooltip">
               <Slider
                 min={10}
@@ -145,7 +145,7 @@ const InputForm = ({
                 step={rentRateStep}
                 value={convertedRentRate}
                 onChange={handleRentRateSliderChange}
-                className="slider"
+                className="slider px-2"
               />
 
               <div
@@ -157,7 +157,7 @@ const InputForm = ({
                 {convertedRentRate}%
               </div>
             </div>
-            <div className="mx-2 w-1/12">25%</div>
+            <div className="mx-2 w-1/12 text-center">25%</div>
           </div>
         </div>
         <div className="flex flex-row  items-center w-full">
