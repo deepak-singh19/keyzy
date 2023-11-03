@@ -48,13 +48,11 @@ const InputForm = ({
     setDiscount(newValue);
   };
 
-  const handleRentRateSliderChange = useCallback(()=>{
-    (value: number | number[]) => {
+  const handleRentRateSliderChange =(value: number | number[]) => {
       const newValue = Array.isArray(value) ? value[0] : value;
       setConvertedRentRate(newValue);
     };
 
-  },[])
 
   const handleDurationChange = (a: number) => {
     setDuration(a);
@@ -62,7 +60,7 @@ const InputForm = ({
 
   const handleDesiredYieldChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = parseFloat(e.target.value);
-    setDesiredYield(newValue);
+    // setDesiredYield(newValue);
 
     if (newValue >= 4.5 && newValue <= 9) {
       // setDesiredYield(newValue);
